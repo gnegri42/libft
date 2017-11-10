@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnegri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 14:50:32 by gnegri            #+#    #+#             */
-/*   Updated: 2017/11/09 14:50:34 by gnegri           ###   ########.fr       */
+/*   Created: 2017/11/10 10:59:50 by gnegri            #+#    #+#             */
+/*   Updated: 2017/11/10 10:59:51 by gnegri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, char *s2)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int i;
-	int j;
+	unsigned int	i;
+	int				c;
+	char			*str;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
+	c = 0;
+	while (s[c] != '\0')
+		c++;
+	str = (char *)malloc((c + 1) * sizeof(char));
+	if (str == NULL)
+		return (0);
+	if (s != NULL)
 	{
-		s1[i + j] = s2[j];
-		i++;
-		j++;
+		while (s[i] != '\0')
+		{
+			str[i] = (*f)(((char *)s)[i]);
+			i++;
+		}
+		return (str);
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	else
+		return (0);
 }

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnegri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 14:50:32 by gnegri            #+#    #+#             */
-/*   Updated: 2017/11/09 14:50:34 by gnegri           ###   ########.fr       */
+/*   Created: 2017/11/10 10:51:52 by gnegri            #+#    #+#             */
+/*   Updated: 2017/11/10 10:51:54 by gnegri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, char *s2)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int i;
-	int j;
+	unsigned int i;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
+	while (s[i] != '\0')
 	{
-		s1[i + j] = s2[j];
+		(*f)(i, &s[i]);
 		i++;
-		j++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
 }

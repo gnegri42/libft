@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnegri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 14:50:32 by gnegri            #+#    #+#             */
-/*   Updated: 2017/11/09 14:50:34 by gnegri           ###   ########.fr       */
+/*   Created: 2017/11/10 09:44:51 by gnegri            #+#    #+#             */
+/*   Updated: 2017/11/10 09:44:54 by gnegri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, char *s2)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	int j;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
+	if (n == 0)
+		return (0);
+	while (i < n && ((unsigned char *)s1)[i] == ((unsigned char *)s2)[i])
 		i++;
-	while (s2[j] != '\0')
-	{
-		s1[i + j] = s2[j];
-		i++;
-		j++;
-	}
-	s1[i + j] = '\0';
-	return (s1);
+	return
+		(((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

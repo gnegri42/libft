@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnegri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 14:50:32 by gnegri            #+#    #+#             */
-/*   Updated: 2017/11/09 14:50:34 by gnegri           ###   ########.fr       */
+/*   Created: 2017/11/10 15:23:17 by gnegri            #+#    #+#             */
+/*   Updated: 2017/11/10 15:23:18 by gnegri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, char *s2)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	int i;
-	int j;
 
 	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
+	while(s[i] != '\0')
 	{
-		s1[i + j] = s2[j];
+		ft_putchar_fd(s[i], fd);
 		i++;
-		j++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
 }

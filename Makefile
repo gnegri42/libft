@@ -19,6 +19,7 @@ FILES =		tests.c\
 			ft_memccpy.c\
 			ft_memmove.c\
 			ft_memchr.c\
+			ft_memcmp.c\
 			ft_strlen.c\
 			ft_strdup.c\
 			ft_strcpy.c\
@@ -39,6 +40,16 @@ FILES =		tests.c\
 			ft_toupper.c\
 			ft_tolower.c\
 			ft_memalloc.c\
+			ft_strclr.c\
+			ft_striter.c\
+			ft_striteri.c\
+			ft_strmap.c\
+			ft_strmapi.c\
+			ft_strequ.c\
+			ft_strnequ.c\
+			ft_strsub.c\
+			ft_strjoin.c\
+			ft_strtrim.c\
 			ft_putchar.c\
 			ft_putstr.c\
 			ft_putendl.c\
