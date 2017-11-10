@@ -12,8 +12,7 @@
 
 NAME =		libft.a
 
-FILES =		tests.c\
-			ft_memset.c\
+FILES =		ft_memset.c\
 			ft_bzero.c\
 			ft_memcpy.c\
 			ft_memccpy.c\
@@ -25,6 +24,7 @@ FILES =		tests.c\
 			ft_strcpy.c\
 			ft_strncpy.c\
 			ft_strcat.c\
+			ft_strncat.c\
 			ft_strchr.c\
 			ft_strrchr.c\
 			ft_strstr.c\
@@ -67,7 +67,7 @@ all: $(NAME)
 
 $(NAME) :
 	$(CC) $(FLAGS) -c $(SRCS)
-	$(CC) -o $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 clean :
 	rm -rf $(OBJS)

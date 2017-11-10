@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_memdel(char const *s, unsigned int start, size_t len)
 {
 	free(ap);
 	ap = NULL;

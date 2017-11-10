@@ -31,15 +31,15 @@ char	*ft_strrchr(const char *s, int c)
 	if (nb1 == 0 && s[i + 1] != c)
 		return (0);
 	else
+	{
 		i = 0;
 		while (s[i] != '\0' && nb2 != nb1)
 		{
 			if (s[i] == c)
-			{
 				nb2++;
-			}
 			i++;
 		}
 		i--;
 		return ((char *)&s[i]);
+	}
 }
