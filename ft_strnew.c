@@ -17,10 +17,11 @@ char	*ft_strnew(size_t size)
 	char	*str;
 	size_t	i;
 
-	str = malloc(sizeof(char) * size);
+	i = 0;
+	str = malloc(sizeof(char) * (size + 1));
 	if (str == NULL)
 		return (0);
-	while (i < size)
+	while (i <= size)
 	{
 		str[i] = '\0';
 		i++;

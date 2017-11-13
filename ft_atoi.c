@@ -21,7 +21,7 @@ int		ft_atoi(const char *str)
 	i = 0;
 	p = 1;
 	nb = 0;
-	while (str[i] <= 32)
+	while (str[i] <= 32 && str[i] != 27)
 		i++;
 	if (str[i] == '+')
 		i++;
@@ -38,3 +38,5 @@ int		ft_atoi(const char *str)
 	nb = nb * p;
 	return (nb);
 }
+/*
+NTVRF' '*/
