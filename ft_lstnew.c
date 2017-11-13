@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gnegri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 18:10:19 by gnegri            #+#    #+#             */
-/*   Updated: 2017/11/08 18:10:21 by gnegri           ###   ########.fr       */
+/*   Created: 2017/11/13 13:56:08 by gnegri            #+#    #+#             */
+/*   Updated: 2017/11/13 13:56:10 by gnegri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if (c < '0' || c > 'z')
+	t_list	*list;
+
+	list = (t_list *)malloc(sizeof(*list));
+	if (list == NULL)
 		return (0);
-	if (c < 'A' && c > '9')
-		return (0);
-	if (c > 'Z' && c < 'a')
-		return (0);
-	else
-		return (1);
+	if (content == NULL)
+	{
+		list->content = NULL;
+		list->content_size = 0;
+	}
+	ft_memcpy(list->content, content, content_size);
+	list->content_size = content_size;
+	list->next = NULL;
+	return (list);
 }

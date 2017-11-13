@@ -15,16 +15,18 @@
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	unsigned int	i;
-	int				j;
+	unsigned int	j;
 
 	i = 0;
+	if (src == 0)
+		return (0);
 	while (src[i] != '\0' && i < len)
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	j = i;
-	if (src[i] == '\0' && dst[j] != '\0')
+	while (src[i] == '\0' && dst[j] != '\0' && j < len)
 	{
 		dst[j] = '\0';
 		j++;
