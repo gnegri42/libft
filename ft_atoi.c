@@ -38,5 +38,3 @@ int		ft_atoi(const char *str)
 	nb = nb * p;
 	return (nb);
 }
-/*
-NTVRF' '*/

@@ -12,19 +12,17 @@
 
 #include "libft.h"
 
-static void	ft_max_neg(void)
+static void		ft_max_neg(char *s, int fd)
 {
-	ft_putstr("-2147483648");
+	ft_putstr_fd(s, fd);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void			ft_putnbr_fd(int n, int fd)
 {
 	char l;
 
 	if (n == -2147483648)
-	{
-		ft_max_neg();
-	}
+		ft_max_neg("-2147483648", fd);
 	else
 	{
 		if (n < 0)

@@ -16,14 +16,18 @@ static int		ft_count(int n)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	if (n < 0)
+	{
 		n = -n;
+		i++;
+	}
 	while (n > 9)
 	{
 		n = n / 10;
 		i++;
 	}
+	i++;
 	return (i);
 }
 
@@ -58,7 +62,6 @@ char			*ft_itoa(int n)
 	if (n < 0)
 	{
 		p = 1;
-		len++;
 		n = -n;
 	}
 	str = fill_str(str, n, len, p);

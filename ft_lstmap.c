@@ -16,8 +16,10 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	while (lst)
 	{
-		lst = (t_list *)malloc(sizeof(t_list));
-		(*f)(lst->content);
+		(*f)(lst);
+		lst = (t_list *)malloc(sizeof(lst));
+		if (lst == NULL)
+			return (0);
 		lst = lst->next;
 	}
 	return (lst);
