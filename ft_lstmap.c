@@ -6,7 +6,7 @@
 /*   By: gnegri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 14:31:14 by gnegri            #+#    #+#             */
-/*   Updated: 2017/11/13 14:31:17 by gnegri           ###   ########.fr       */
+/*   Updated: 2017/11/14 17:48:23 by gnegri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	while (lst)
+	t_list	*first;
+	t_list	*list;
+
+	first = (f)(lst);
+	list = first;
+	while (lst->next != NULL)
 	{
-		(*f)(lst);
-		lst = (t_list *)malloc(sizeof(lst));
-		if (lst == NULL)
-			return (0);
+		first->next = (f)(lst->next);
+		first = first->next;
 		lst = lst->next;
 	}
-	return (lst);
+	return (list);
 }
