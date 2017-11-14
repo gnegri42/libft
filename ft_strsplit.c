@@ -21,13 +21,11 @@ static int		ft_count(char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] != c)
+		if (s[i] == c && s[i + 1] != c)
 			j++;
-		while (s[i] != c)
-			i++;
 		i++;
 	}
-	if (s[0] == '\0')
+	if (s[0] != '\0')
 		j++;
 	return (j);
 }
@@ -66,7 +64,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (0);
 	nb_words = ft_count(s, c);
-	tab = (char **)malloc(sizeof(char *) * (nb_words + 1));
+	tab = (char **)malloc(sizeof(char *) * (nb_words + 2));
 	if (tab == NULL)
 		return (0);
 	while (s[i] == c && s[i])
