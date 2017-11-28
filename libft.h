@@ -6,7 +6,7 @@
 /*   By: gnegri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:37:24 by gnegri            #+#    #+#             */
-/*   Updated: 2017/11/08 09:37:26 by gnegri           ###   ########.fr       */
+/*   Updated: 2017/11/28 17:58:50 by gnegri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+int					ft_getnbr(char *str);
 #endif

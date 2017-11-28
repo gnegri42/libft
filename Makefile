@@ -6,7 +6,7 @@
 #    By: gnegri <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:53:26 by gnegri            #+#    #+#              #
-#    Updated: 2017/11/28 15:58:55 by gnegri           ###   ########.fr        #
+#    Updated: 2017/11/28 18:00:41 by gnegri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ FILES =		ft_memset.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
 			get_next_line.c\
+			ft_getnbr.c\
 
 SRCS =		$(FILES)
 
