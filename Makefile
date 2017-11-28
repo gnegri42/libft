@@ -6,7 +6,7 @@
 #    By: gnegri <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:53:26 by gnegri            #+#    #+#              #
-#    Updated: 2017/11/08 10:53:28 by gnegri           ###   ########.fr        #
+#    Updated: 2017/11/28 15:58:55 by gnegri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ FILES =		ft_memset.c\
 			ft_lstadd.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
+			get_next_line.c\
 
 SRCS =		$(FILES)
 
@@ -79,17 +80,23 @@ CC =		gcc
 
 FLAGS =		-Wall -Werror -Wextra
 
+.PHONY: all clean fclean re
+
 all: $(NAME)
 
 $(NAME) :
-	$(CC) $(FLAGS) -c $(SRCS)
-	ar rc $(NAME) $(OBJS)
+	@echo "\033[1;91mCompilation...\033[0m"
+	@$(CC) $(FLAGS) -c $(SRCS)
+	@ar rc $(NAME) $(OBJS)
+	@echo "\033[1;91mCompilation complete !\033[0m" 
 
 clean :
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
+	@echo "\033[1;91m$(OBJS) removed !\033[0m"
 
 fclean : clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "\033[1;91m$(NAME) removed !\033[0m"
 
 re : fclean all
 
